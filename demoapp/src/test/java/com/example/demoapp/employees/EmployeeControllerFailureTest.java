@@ -35,20 +35,6 @@ public class EmployeeControllerFailureTest {
 //        assertEquals("Employee not found id=1", result.getDetail());
     }
 
-    @Test
-    @DisplayName("Failure case")
-    public void case02() {
-        // Arrange
-        int id = 100;
-        when(employeeRepository.findById(100)).thenReturn(Optional.empty());
-        
-        // Act
-        ResponseEntity<ErrorResponse> result
-                = restTemplate.getForEntity("/employees/" + id, ErrorResponse.class);
-        // Assert
-        assertEquals(404, result.getStatusCodeValue());
-//        assertEquals(404, result.getCode());
-//        assertEquals("Employee not found id=1", result.getDetail());
-    }
+
 
 }
